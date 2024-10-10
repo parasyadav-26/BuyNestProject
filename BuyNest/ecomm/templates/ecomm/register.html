@@ -1,0 +1,49 @@
+<html>
+    <head>
+        <style>
+            /* Add some styles for the form fields */
+            form {
+                display: flex;
+                flex-direction: column;
+                gap: 10px; /* Space between the fields */
+                width: 300px; /* Optional: set a width for the form */
+            }
+
+            label {
+                margin-bottom: 5px; /* Space between label and input field */
+            }
+
+            input[type="text"],
+            input[type="email"],
+            input[type="password"] {
+                padding: 8px; /* Padding inside input fields */
+                border: 1px solid #ccc; /* Optional: add a border */
+                border-radius: 4px; /* Optional: add rounded corners */
+                box-sizing: border-box; /* Include padding and border in element's total width and height */
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            <form method="post" action="{% url 'register' %}"> <!-- Correct action for form -->
+                {% csrf_token %}
+                
+                <label for="fname">First Name</label>
+                <input type="text" id="fname" name="fname">
+                
+                <label for="lname">Last Name</label>
+                <input type="text" id="lname" name="lname">
+                
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email">
+                
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password">
+                
+                <button type="submit">Submit</button> <!-- Submit button inside form -->
+            </form>
+            
+            <button>Submit </button>
+        </div>
+    </body>
+</html>
